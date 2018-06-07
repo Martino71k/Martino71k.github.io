@@ -1197,6 +1197,7 @@ a {
   bottom: -100px;
   -webkit-transform: rotate(-7deg);
           transform: rotate(-7deg);
+  pointer-events: none;
 }
 .contact__link--telegram::after {
   content: "";
@@ -1209,6 +1210,7 @@ a {
   position: absolute;
   bottom: -20px;
   left: 20px;
+  pointer-events: none;
 }
 .form {
   -webkit-box-shadow: 2px 2px 2px 3px white;
