@@ -163,67 +163,52 @@ arrowRight.addEventListener("click", function() {
 startSlide();
 
 
+
+
+
 // Form
 
-// Отправка заявки 
-$(document).ready(function() {
-	$('#order').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
-		if (document.form.name.value == '' || document.form.email.value == '' ) {
-			valid = false;
-			return valid;
-		}
-		$.ajax({
-			type: "POST",
-			url: "/php/mail.php",
-			data: $(this).serialize()
-		}).done(function() {
-			$('.modal').fadeIn();
-			$(this).find('input').val('');
-			$('#order').trigger('reset');
-		});
-		return false;
-	});
-});
-
-// Закрыть попап «спасибо»
-$('.modal__btn').click(function() { // по клику на крестик
-	$('.modal').fadeOut();
-});
-
-$(document).mouseup(function (e) { // по клику вне попапа
-	var popup = $('.popup');
-	if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-		$('.modal').fadeOut();
-	}
-});
-
-// Маска ввода номера телефона (плагин maskedinput)
-$(function($){
-	$('[name="phone"]').mask("+7(999) 999-9999");
-});
+// // Отправка заявки 
+// $(document).ready(function() {
+// 	$('#order').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
+// 		if (document.form.name.value == '' || document.form.email.value == '' ) {
+// 			valid = false;
+// 			return valid;
+// 		}
+// 		$.ajax({
+// 			type: "POST",
+// 			url: "php/mail.php",
+// 			data: $(this).serialize()
+// 		}).done(function() {
+// 			$('.modal').fadeIn();
+// 			$(this).find('input').val('');
+// 			$('#order').trigger('reset');
+// 		});
+// 		return false;
+// 	});
+// });
+// $(document).ready(function(){
+//     $("#form").submit(function() { //устанавливаем событие отправки для формы с id=form
+//             var form_data = $(this).serialize(); //собераем все данные из формы
+//             $.ajax({
+//             type: "POST", //Метод отправки
+//             url: "send.php", //путь до php фаила отправителя
+//             data: form_data,
+//             success: function() {
+//                    //код в этом блоке выполняется при успешной отправке сообщения
+//                    alert("Ваше сообщение отпрвлено!");
+// 						}
+//     })
+// });    
+// }
 
 
-
-// // Кнопка «Наверх/Вниз»
-// var lastScrollPosition = 0; 
-
-// $('#scroll-up').click( function(){
-// 	if ( $(document).scrollTop() > 0 ) {
-// 		$('body').animate({scrollTop:0},1000);
-// 		lastScrollPosition = $(document).scrollTop();
-// 	} else {
-// 		$('body').animate({scrollTop:lastScrollPosition},1000);
-// 	}	
+// // Маска ввода номера телефона (плагин maskedinput)
+// $(function($){
+// 	$('[name="phone"]').mask("+7(999) 999-9999");
 // });
 
-// $(document).scroll( function() {
-// 	if ( $(document).scrollTop() > 0 ) {
-// 		$('#scroll-up').fadeIn();
-// 		$('#scroll-up').text('Наверх');
-// 	} else {
-// 		$('#scroll-up').text('Вниз');
-// 	}
-// });
+
 
 /* Preloader */ 
 $(window).load(function() {
@@ -231,3 +216,83 @@ $(window).load(function() {
     $(".loader").delay(100).fadeOut().remove();   
   }, 2000);  
 });
+
+
+
+
+// // Header change while sroll
+
+// var header = document.querySelector('.page-header');
+
+// var headerChange = function(e) {
+// 	if (window.pageYOffset > 5) {
+// 		header.classList.add('page-header--scroll');
+// 	} 
+// 	else {
+// 		header.classList.add('page-header');
+// 	}
+// };
+
+// (function () {
+// 	if(window.addEventListener('scroll', headerChange));
+// })();
+
+
+// Modal works
+
+// $('body').on('click', '.modal-open', function(e) {
+// 	$('.modal-works, .modal-works__content').show();
+// 	e.preventDefault();
+// });
+
+// $('body').on('click', '.modal-open--sedona', function(e) {
+// 	$('.modal-works, .modal-works__content--sedona').show();
+// 	e.preventDefault();
+// });
+
+// $('body').on('click', '.modal-open--pink', function(e) {
+// 	$('.modal-works, .modal-works__content--pink').show();
+// 	e.preventDefault();
+// });
+
+// $('body').on('click', '.modal-open--markdevs', function(e) {
+// 	$('.modal-works, .modal-works__content--markdevs').show();
+// 	e.preventDefault();
+// });
+
+
+$('body').on('click', '.modal-open--sedona', function(e) {
+	$('#sedona, .modal-works__content').show();
+});
+
+$('body').on('click', '.modal-open--pink', function(e) {
+	$('#pinkid, .modal-works__content').show();
+});
+
+$('body').on('click', '.modal-open--markdevs', function(e) {
+	$('#markdevsid, .modal-works__content').show();
+});
+
+// close modal
+
+var modal = document.querySelector('.modal-works'); // Работает только с первым
+
+window.onclick = function(event) {
+	if (event.target == modal) {
+			modal.style.display = "none";
+	}
+}
+
+window.onclick = function(event) {
+  var isModal = (' ' + event.target.className + ' ').indexOf(' modal-works ') > -1;
+  if (isModal) {
+    event.target.style.display = "none";
+  }
+}
+
+// for (var i = 0; i < modal.length; i++) {
+// 	var modalClose = modal[i];
+// }
+
+
+
