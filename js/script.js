@@ -117,6 +117,10 @@ $('body').on('click', '.modal-open--markdevs', function(e) {
 	$('#markdevsid, .modal-works__content').show();
 });
 
+$('body').on('click', '.modal-open--healthyapp', function(e) {
+	$('#healthyapp, .modal-works__content').show();
+});
+
 // close modal
 
 var modal = document.querySelector('.modal-works'); 

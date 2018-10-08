@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127150099-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-127150099-1');
+	</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Mark & Devs</title>
@@ -193,8 +202,21 @@
               </ul>
               <img class="works__img" src="img/markdevs1.png" alt="Сайт">
             </a>
-          </li>
-          <li class="works__item">
+					</li>
+					<li class="works__item modal-open modal-open--healthyapp">
+            <!-- <a href="https://github.com/Martino71k/236048-sedona" class="work__link"> -->
+              <div class="works__bar">
+                <div class="works__bar-i"></div>
+              </div>
+              <ul class="works__tag-list">
+                <li>Vue.js</li>
+                <li>Webpack</li>
+              </ul>
+              <img class="works__img" src="img/healthy.jpg" alt="Сайт">
+            </a>
+					</li>
+					<!-- coming soon li -->
+          <!-- <li class="works__item">
             <a href="#" class="work__link">
               <div class="works__bar">
                 <div class="works__bar-i"></div>
@@ -203,7 +225,7 @@
                 
               </ul>
             </a>
-          </li>
+          </li> -->
 				</ul>
       </div>
     </section>
@@ -480,8 +502,37 @@
 					<img class="modal-works__img" src="img/mdfin.jpg" alt="Сайт">
 				</div>
 				</div>
+				<div class="modal-works" id="healthyapp">
+					<div class="modal-works__content modal-works__content--healthyapp">
+						<h3 class="modal-works__title">Healthy Vue App</h3>
+						<div class="modal-works__text-wrapper">
+							<div class="modal-works__text-container">
+								<p class="modal-works__text">Решив ознакомится с js фреймворками, моему вниманию предстал vue.js и не буду врать, я очень полюбил творение Эвана Ю. <br>Я незамедлитено приступил к созданию первого веб-приложения. Это оказался <strong>интернет-магазин здоровой пищи</strong>.<br> Внимание! Этот проект не адаптирован под низкие разрешения, т.к передо мной стояла другая задача - освоить данный фреймоворк.</p>
+								<p class="modal-works__text">Тут Vue пригодился как никогда. Куча списков, которые легко рендерить через vue; слайдеров, которые быстро подключаются и кастомизируются через плагины. Плюс структура vue файлов, где все разложено по своим файлам, показалась мне очень удобной.</p>
+							</div>
+							<div class="modal-works__link-wrapper">
+							<p class="modal-works__link-text">Ссылка на проект на GitHub:</p>
+							<a class="modal-works__link" target="_blank" href="https://github.com/Martino71k/Mark-Devs">github.com/Martino71k/Mark-Devs</a>
+							<p class="modal-works__tags">Теги: </p>
+							<ul class="modal-works__tag-list">
+								<li>vue.js</li>
+								<li>webpack</li>
+							</ul>
+							</div>
+					</div>
+						<img class="modal-works__img" src="img/healthy.jpg" alt="Сайт">
+					</div>
+					</div>
 		
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script>
+		window.sr = ScrollReveal();
+		sr.reveal('.works__list', {
+			duration: 2000,
+			origin: 'bottom'
+		});
+	</script>
 </body>
 </html>
